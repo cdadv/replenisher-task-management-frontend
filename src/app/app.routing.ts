@@ -6,7 +6,7 @@ import { AuthGuard } from './shared/services/auth/auth.guard';
 export const rootRouterConfig: Routes = [
   { 
     path: '', 
-    redirectTo: 'my_tasks', 
+    redirectTo: 'task_management', 
     pathMatch: 'full' 
   },
   {
@@ -27,13 +27,13 @@ export const rootRouterConfig: Routes = [
     children: [
       {
         path: 'task_management',
-        loadChildren: './views/cruds/cruds.module#CrudsModule', 
+        loadChildren: './views/task-list/task-list.module#TaskListModule',
         data: { title: 'Task Management', breadcrumb: 'TASK MANAGEMENT'}
       },
       {
-        path: 'my_tasks',
-        loadChildren: './views/app-inbox/app-inbox.module#AppInboxModule', 
-        data: { title: 'My Tasks', breadcrumb: 'MY TASKS'}
+        path: 'templates',
+        loadChildren: './views/templete-list/template.module#TemplateModule',
+        data: { title: 'Template Management', breadcrumb: 'TEMPLATE MANAGEMENT'}
       }
     ]
   },

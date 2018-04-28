@@ -37,11 +37,11 @@ export class NavigationService {
       state: 'task_management'
     },
     {
-      name: 'My Tasks',
+      name: 'TEMPLATE MANAGEMENT',
       type: 'link',
-      tooltip: 'My Tasks',
+      tooltip: 'template management',
       icon: 'inbox',
-      state: 'my_tasks'
+      state: 'templates'
     }
   ]
 

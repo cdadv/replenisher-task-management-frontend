@@ -21,9 +21,9 @@ import { AppConfirmModule } from '../../shared/services/app-confirm/app-confirm.
 import { AppLoaderModule } from '../../shared/services/app-loader/app-loader.module';
 import { CrudNgxTableComponent } from './crud-ngx-table/crud-ngx-table.component';
 
-import { CrudsRoutes } from './cruds.routing';
+import { TaskListRoutes } from './task-list.routing';
 import { CrudService } from './crud.service';
-import { NgxTablePopupComponent } from './crud-ngx-table/ngx-table-popup/ngx-table-popup.component'
+import { NgxTablePopupComponent } from './crud-ngx-table/ngx-table-popup/ngx-table-popup.component';
 
 @NgModule({
   imports: [
@@ -44,10 +44,10 @@ import { NgxTablePopupComponent } from './crud-ngx-table/ngx-table-popup/ngx-tab
     MatSlideToggleModule,
     AppConfirmModule,
     AppLoaderModule,
-    RouterModule.forChild(CrudsRoutes)
+    RouterModule.forChild(TaskListRoutes)
   ],
   declarations: [CrudNgxTableComponent, NgxTablePopupComponent],
   providers: [CrudService],
   entryComponents: [NgxTablePopupComponent]
 })
-export class CrudsModule { }
+export class TaskListModule { }
