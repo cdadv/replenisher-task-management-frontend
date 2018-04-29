@@ -3,6 +3,7 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class HttpService {
+  
 
   constructor(private http: HttpClient) { 
   }
@@ -17,5 +18,17 @@ export class HttpService {
     };
 
     return this.http.get(uri, httpOptions);
+  }
+
+  post(uri: string, params: string, data: any) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      }),
+      params: new HttpParams().set('access_token', params)
+    };
+
+    return this.http.post(uri, data, httpOptions);
+
   }
 }

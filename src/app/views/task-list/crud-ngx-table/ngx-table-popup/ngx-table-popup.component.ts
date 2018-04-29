@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import * as _ from "lodash";
 
 @Component({
   selector: 'app-ngx-table-popup',
@@ -20,17 +21,28 @@ export class NgxTablePopupComponent implements OnInit {
   buildItemForm(item) {
     this.itemForm = this.fb.group({
       name: [item.name || '', Validators.required],
-      age: [item.age || ''],
-      email: [item.email || ''],
-      company: [item.company || ''],
-      phone: [item.phone || ''],
-      address: [item.address || ''],
-      balance: [item.balance || ''],
-      isActive: [item.isActive || false]
+      description: [item.description || ''],
+      taskStatusString: [item.taskStatusString || '', Validators.required],
+      timeEstimatedFinish: [item.timeEstimatedFinish || '', Validators.required],
+      assignedStaffIdSet: [item.assignees || '', Validators.required],
+      managerIdSet: [item.reporters || '', Validators.required]
     })
   }
 
+  parseUsersId() {
+    //console.log(this.itemForm.value);
+    _.forEach(this.itemForm.value, (value, key) => {
+      if (key == 'managerIdSet' || key == 'assignedStaffIdSet') {
+        this.itemForm.value[key] = this.itemForm.value[key].split(',')
+        .map((item) => {
+          return parseInt(item, 10);
+        });
+      }
+    });
+  }
+
   submit() {
+    this.parseUsersId();
     this.dialogRef.close(this.itemForm.value)
   }
 }

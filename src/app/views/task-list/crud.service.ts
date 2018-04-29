@@ -7,7 +7,7 @@ import { HttpService } from '../../shared/services/http.service';
 export class CrudService {
 
   private uri = 'http://127.0.0.1:8080/task';
-  private access_token = '392b98e6-d86b-4688-96f8-f542bd8b2004';
+  private access_token = 'f7bd49e0-bf07-4f4f-a0fe-bcea0400d1b3';
   constructor(private httpService: HttpService) { }
 
   //******* Implement your APIs ********
@@ -15,9 +15,9 @@ export class CrudService {
     return this.httpService.get(this.uri, this.access_token);
   }
   addItem(item): Observable<any> {
-    item._id = Math.round(Math.random() * 10000000000).toString();
-    this.items.unshift(item)
-    return Observable.of(this.items.slice()).delay(1000)
+    item.timeInput = new Date();
+    item.corporationId = 1;
+    return this.httpService.post(this.uri, this.access_token, item);
   }
   updateItem(id, item) {
     this.items = this.items.map(i => {

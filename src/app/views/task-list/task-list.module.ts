@@ -10,10 +10,13 @@ import {
   MatButtonModule,
   MatChipsModule,
   MatListModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
   MatTooltipModule,
   MatDialogModule,
   MatSnackBarModule,
-  MatSlideToggleModule
+  MatSlideToggleModule,
+  MatSelectModule
  } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
@@ -32,11 +35,14 @@ import { NgxTablePopupComponent } from './crud-ngx-table/ngx-table-popup/ngx-tab
     FlexLayoutModule,
     NgxDatatableModule,
     MatInputModule,
+    MatDatepickerModule,
     MatIconModule,
     MatCardModule,
     MatMenuModule,
+    MatSelectModule,
     MatButtonModule,
     MatChipsModule,
+    MatNativeDateModule,
     MatListModule,
     MatTooltipModule,
     MatDialogModule,

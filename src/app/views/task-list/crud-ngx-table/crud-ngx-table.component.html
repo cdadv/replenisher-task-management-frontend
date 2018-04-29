@@ -12,29 +12,39 @@
           [footerHeight]="50"
           [limit]="10"
           [rowHeight]="'auto'">
-          <ngx-datatable-column name="Task Name" [flexGrow]="1">
+          <ngx-datatable-column name="Task Name" [flexGrow]="2">
             <ng-template let-row="row" ngx-datatable-cell-template>
               {{ row?.name }}
             </ng-template>
           </ngx-datatable-column>
-          <ngx-datatable-column name="Reporter" [flexGrow]="1">
+          <ngx-datatable-column name="Reporter" [flexGrow]="1.5">
             <ng-template let-row="row" ngx-datatable-cell-template>
-              {{ row?.age }}
+              {{ row?.reporter }}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Assignee" [flexGrow]="1.5">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+              {{ row?.assignee }}
             </ng-template>
           </ngx-datatable-column>
           <ngx-datatable-column name="Due Date" [flexGrow]="1">
             <ng-template let-row="row" ngx-datatable-cell-template>
-              {{ row?.balance | currency }}
-            </ng-template>
-          </ngx-datatable-column>
-          <ngx-datatable-column name="Assignee" [flexGrow]="1">
-            <ng-template let-row="row" ngx-datatable-cell-template>
-              {{ row?.company }}
+              {{ row?.timeEstimatedFinish | date }}
             </ng-template>
           </ngx-datatable-column>
           <ngx-datatable-column name="Priority" [flexGrow]="1">
             <ng-template let-row="row" ngx-datatable-cell-template>
-              <mat-chip mat-sm-chip [color]="'primary'" [selected]="row.isActive">{{row.isActive ? 'active' : 'inactive'}}</mat-chip>
+              <mat-chip mat-sm-chip [color]="'primary'" [selected]="row.taskPriorityString=='HIGH'">{{row.taskPriorityString}}</mat-chip>
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Status" [flexGrow]="1">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+              <mat-chip mat-sm-chip [color]="'primary'" [selected]="row.taskStatusString=='CREATED'">{{row.taskStatusString}}</mat-chip>
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Recurring" [flexGrow]="1">
+            <ng-template let-row="row" ngx-datatable-cell-template>
+              <mat-chip mat-sm-chip [color]="'primary'" [selected]="row.recurring=='true'">{{row.recurring}}</mat-chip>
             </ng-template>
           </ngx-datatable-column>
           <ngx-datatable-column name="Actions" [flexGrow]="1">

@@ -84,6 +84,7 @@ export class CrudNgxTableComponent implements OnInit, OnDestroy {
     })
     dialogRef.afterClosed()
       .subscribe(res => {
+        console.log(res);
         if(!res) {
           // If user press cancel
           return;
@@ -92,7 +93,8 @@ export class CrudNgxTableComponent implements OnInit, OnDestroy {
         if (isNew) {
           this.crudService.addItem(res)
             .subscribe(data => {
-              this.items = data;
+              console.log(data);
+              //this.items = data;
               this.loader.close();
               this.snack.open('Member Added!', 'OK', { duration: 4000 })
             })
