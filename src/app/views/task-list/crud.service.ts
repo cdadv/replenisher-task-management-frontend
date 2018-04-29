@@ -7,7 +7,7 @@ import { HttpService } from '../../shared/services/http.service';
 export class CrudService {
 
   private uri = 'http://127.0.0.1:8080/task';
-  private access_token = 'da1cb0a0-dcc0-43ce-8042-109ac22d78ba';
+  private access_token = '392b98e6-d86b-4688-96f8-f542bd8b2004';
   constructor(private httpService: HttpService) { }
 
   //******* Implement your APIs ********

@@ -5,36 +5,74 @@ import { AppConfirmService } from '../../../shared/services/app-confirm/app-conf
 import { AppLoaderService } from '../../../shared/services/app-loader/app-loader.service';
 import { NgxTablePopupComponent } from './ngx-table-popup/ngx-table-popup.component';
 import { Subscription } from 'rxjs/Subscription';
+import * as _ from "lodash";
+import { EventService } from '../../../shared/services/event.service';
+
 
 @Component({
   selector: 'app-crud-ngx-table',
   templateUrl: './crud-ngx-table.component.html'
 })
 export class CrudNgxTableComponent implements OnInit, OnDestroy {
-  public items: any[];
+  public items = [];
   public getItemSub: Subscription;
   constructor(
     private dialog: MatDialog,
     private snack: MatSnackBar,
     private crudService: CrudService,
     private confirmService: AppConfirmService,
-    private loader: AppLoaderService
-  ) { }
+    private loader: AppLoaderService,
+    private eventService: EventService
+  ) {
+    // _.bindAll(this, 'getItems'); 
+  }
 
   ngOnInit() {
-    this.getItems()
-    console.log(this.items);
+    this.getItemSub = this.crudService.getItems()
+    .subscribe(data => {
+      this.items = this.onData(data.result);    
+      console.log(this.items);
+    });
   }
   ngOnDestroy() {
     if (this.getItemSub) {
       this.getItemSub.unsubscribe()
     }
   }
-  getItems() {
-    this.getItemSub = this.crudService.getItems()
-      .subscribe(data => {
-        this.items = data;
-      })
+  // getItems() {
+  //   return this.getItemSub = this.crudService.getItems()
+  //     .subscribe(data => {
+  //       this.items = this.onData(data.result);    
+  //       console.log(this.items);
+  //     });
+  // }
+
+  onData(result: any): Array<any> {
+    let taskList = [];
+    _.forEach(result, (task) => {
+      let taskProcessed: {[key: string]: any} = {};
+      _.forEach(task, (value, key) => {
+       // console.log(task);
+        if (key == 'managerUserDTOSet') {
+          taskProcessed.reporter = this.generateNames(task[key]);
+        } else if (key == 'assignedStaffUserDTOSet') {
+          taskProcessed.assignee = this.generateNames(task[key]);
+        } else {
+          taskProcessed[key] = task[key];
+        }
+      });
+      taskList.push(taskProcessed);
+    });
+    console.log(taskList);
+    return taskList;
+  }
+
+  generateNames(userSet: Array<any>): string {
+    let nameList = '';
+    _.forEach(userSet, (user) => {
+      nameList = nameList + ' ' + user.fullName;
+    });
+    return nameList;
   }
 
   openPopUp(data: any = {}, isNew?) {
