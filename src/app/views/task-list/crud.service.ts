@@ -5,7 +5,7 @@ import { HttpService } from '../../shared/services/http.service';
 
 @Injectable()
 export class CrudService {
-  private uri = 'http://127.0.0.1:8080/task';
+  private uri = 'http://ec2-54-213-41-232.us-west-2.compute.amazonaws.com:8181/task';
 
   constructor(private httpService: HttpService) { }
 
