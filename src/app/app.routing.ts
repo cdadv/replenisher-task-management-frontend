@@ -6,7 +6,7 @@ import { AuthGuard } from './shared/services/auth/auth.guard';
 export const rootRouterConfig: Routes = [
   { 
     path: '', 
-    redirectTo: 'task_management', 
+    redirectTo: 'sessions/signin', 
     pathMatch: 'full' 
   },
   {

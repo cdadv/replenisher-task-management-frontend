@@ -13,7 +13,6 @@ export class SignupComponent implements OnInit {
   @ViewChild(MatButton) submitButton: MatButton;
 
   signupForm: FormGroup
-  constructor() {}
 
   ngOnInit() {
     const password = new FormControl('', Validators.required);

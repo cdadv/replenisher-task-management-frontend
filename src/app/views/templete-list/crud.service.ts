@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable'
 import 'rxjs/add/operator/delay';
-import { HttpService } from '../../shared/services/http.service';
+import { SecuredHttpService } from '../../shared/services/http.service';
 
 @Injectable()
 export class CrudService {
-  private uri = 'http://ec2-54-213-41-232.us-west-2.compute.amazonaws.com:8181/task/template';
+  private uri = '/task/template';
 
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: SecuredHttpService) { }
 
   //******* Implement your APIs ********
   getItems(): Observable<any> {
