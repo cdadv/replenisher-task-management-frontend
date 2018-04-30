@@ -57,7 +57,6 @@ import { ThemeService } from './services/theme.service';
 import { LayoutService } from './services/layout.service';
 import { NavigationService } from "./services/navigation.service";
 import { HttpService } from './services/http.service';
-import { EventService } from './services/event.service';
 import { RoutePartsService } from './services/route-parts.service';
 import { AuthGuard } from './services/auth/auth.guard';
 
@@ -112,7 +111,6 @@ const classesToInclude = [
     NavigationService,
     RoutePartsService,
     HttpService,
-    EventService,
     AuthGuard
   ],
   declarations: classesToInclude,

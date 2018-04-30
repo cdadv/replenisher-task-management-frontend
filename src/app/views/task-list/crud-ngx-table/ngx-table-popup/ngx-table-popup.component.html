@@ -20,6 +20,15 @@
         placeholder="Task Description">
       </mat-form-field>
     </div>
+    <div fxFlex="50"  class="pr-1">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        name="feedback"
+        [formControl]="itemForm.controls['feedback']"
+        placeholder="Task FeedBack">
+      </mat-form-field>
+    </div>
 
     <div fxFlex="50"  class="pr-1">
       <mat-form-field class="full-width">
@@ -28,6 +37,16 @@
             <mat-option value="ASSIGNED">ASSIGNED</mat-option>
             <mat-option value="IN_PROGRESS">IN PROGRESS</mat-option>
             <mat-option value="FINISHED">FINISHED</mat-option>
+          </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="50"  class="pr-1">
+      <mat-form-field class="full-width">
+          <mat-select placeholder="Task Priority" [formControl]="itemForm.controls['taskPriorityString']">
+            <mat-option value="HIGH">HIGH</mat-option>
+            <mat-option value="MEDIUM">MEDIUM</mat-option>
+            <mat-option value="LOW">LOW</mat-option>
           </mat-select>
       </mat-form-field>
     </div>

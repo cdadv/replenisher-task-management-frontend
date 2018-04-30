@@ -25,15 +25,17 @@ export class NgxTablePopupComponent implements OnInit {
       taskStatusString: [item.taskStatusString || '', Validators.required],
       timeEstimatedFinish: [item.timeEstimatedFinish || '', Validators.required],
       assignedStaffIdSet: [item.assignees || '', Validators.required],
-      managerIdSet: [item.reporters || '', Validators.required]
+      managerIdSet: [item.reporters || '', Validators.required],
+      taskPriorityString: [item.taskPriorityString || ''],
+      feedback: [item.feedback || ''],
+      note: [item.note || '']
     })
   }
 
   parseUsersId() {
-    //console.log(this.itemForm.value);
     _.forEach(this.itemForm.value, (value, key) => {
       if (key == 'managerIdSet' || key == 'assignedStaffIdSet') {
-        this.itemForm.value[key] = this.itemForm.value[key].split(',')
+        this.itemForm.value[key] = this.itemForm.value[key].split(' ')
         .map((item) => {
           return parseInt(item, 10);
         });
