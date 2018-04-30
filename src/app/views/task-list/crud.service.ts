@@ -28,6 +28,6 @@ export class CrudService {
     return this.httpService.put(this.uri, item);
   }
   removeItem(id) {
-    return this.httpService.delete(this.uri, id);
+    return this.httpService.delete(this.uri, id, 'taskId');
   }
 }

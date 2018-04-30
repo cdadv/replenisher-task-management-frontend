@@ -78,19 +78,19 @@
         placeholder="Reporters">
       </mat-form-field>
     </div>
-  <!--
+    
     <div fxFlex="50"  class="pr-1">
       <mat-form-field class="full-width">
         <input
         matInput
-        name="balance"
-        [formControl]="itemForm.controls['balance']"
-        placeholder="Balance">
+        name="recurringPeriodCronExpression"
+        [formControl]="itemForm.controls['recurringPeriodCronExpression']"
+        placeholder="Recurring Period CronExpression">
       </mat-form-field>
-    </div> -->
-    <!-- <div fxFlex="50"  class="pt-1 pr-1">
-      <mat-slide-toggle [formControl]="itemForm.controls['isActive']">Active Customer</mat-slide-toggle>
-    </div> -->
+    </div> 
+    <div fxFlex="50"  class="pt-1 pr-1">
+      <mat-slide-toggle [formControl]="itemForm.controls['isRecurring']">Is Recurring</mat-slide-toggle>
+    </div>
 
 
 

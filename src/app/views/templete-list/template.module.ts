@@ -10,10 +10,13 @@ import {
   MatButtonModule,
   MatChipsModule,
   MatListModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
   MatTooltipModule,
   MatDialogModule,
   MatSnackBarModule,
-  MatSlideToggleModule
+  MatSlideToggleModule,
+  MatSelectModule
  } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
@@ -23,7 +26,7 @@ import { CrudNgxTableComponent } from './crud-ngx-table/crud-ngx-table.component
 
 import { TemplateRoutes } from './template.routing';
 import { CrudService } from './crud.service';
-import { NgxTablePopupComponent } from './crud-ngx-table/ngx-table-popup/ngx-table-popup.component'
+import { NgxTablePopupComponent } from './crud-ngx-table/ngx-table-popup/ngx-table-popup.component';
 
 @NgModule({
   imports: [
@@ -32,11 +35,14 @@ import { NgxTablePopupComponent } from './crud-ngx-table/ngx-table-popup/ngx-tab
     FlexLayoutModule,
     NgxDatatableModule,
     MatInputModule,
+    MatDatepickerModule,
     MatIconModule,
     MatCardModule,
     MatMenuModule,
+    MatSelectModule,
     MatButtonModule,
     MatChipsModule,
+    MatNativeDateModule,
     MatListModule,
     MatTooltipModule,
     MatDialogModule,
@@ -51,3 +57,4 @@ import { NgxTablePopupComponent } from './crud-ngx-table/ngx-table-popup/ngx-tab
   entryComponents: [NgxTablePopupComponent]
 })
 export class TemplateModule { }
+

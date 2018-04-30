@@ -28,7 +28,9 @@ export class NgxTablePopupComponent implements OnInit {
       managerIdSet: [item.reporters || '', Validators.required],
       taskPriorityString: [item.taskPriorityString || ''],
       feedback: [item.feedback || ''],
-      note: [item.note || '']
+      note: [item.note || ''],
+      isRecurring: [item.isRecurring || ''],
+      recurringPeriodCronExpression: [item.recurringPeriodCronExpression || '']
     })
   }
 

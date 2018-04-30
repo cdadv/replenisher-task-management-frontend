@@ -5,9 +5,9 @@
       <mat-form-field class="full-width">
         <input
         matInput
-        name="username"
+        name="taskname"
         [formControl]="itemForm.controls['name']"
-        placeholder="Name">
+        placeholder="Task Name">
       </mat-form-field>
     </div>
 
@@ -15,10 +15,47 @@
       <mat-form-field class="full-width">
         <input
         matInput
-        type="number"
-        name="age"
-        [formControl]="itemForm.controls['age']"
-        placeholder="Age">
+        name="description"
+        [formControl]="itemForm.controls['description']"
+        placeholder="Task Description">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50"  class="pr-1">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        name="feedback"
+        [formControl]="itemForm.controls['feedback']"
+        placeholder="Task FeedBack">
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="50"  class="pr-1">
+      <mat-form-field class="full-width">
+          <mat-select placeholder="Task Status" [formControl]="itemForm.controls['taskStatusString']">
+            <mat-option value="CREATED">CREATED</mat-option>
+            <mat-option value="ASSIGNED">ASSIGNED</mat-option>
+            <mat-option value="IN_PROGRESS">IN PROGRESS</mat-option>
+            <mat-option value="FINISHED">FINISHED</mat-option>
+          </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="50"  class="pr-1">
+      <mat-form-field class="full-width">
+          <mat-select placeholder="Task Priority" [formControl]="itemForm.controls['taskPriorityString']">
+            <mat-option value="HIGH">HIGH</mat-option>
+            <mat-option value="MEDIUM">MEDIUM</mat-option>
+            <mat-option value="LOW">LOW</mat-option>
+          </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="50"  class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput [formControl]="itemForm.controls['timeEstimatedFinish']" [matDatepicker]="picker" placeholder="Due Date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
     </div>
 
@@ -26,10 +63,19 @@
       <mat-form-field class="full-width">
         <input
         matInput
-        type="email"
-        name="email"
-        [formControl]="itemForm.controls['email']"
-        placeholder="Email">
+        name="estimatedDuration"
+        [formControl]="itemForm.controls['estimatedDuration']"
+        placeholder="Estimated Duration(days)">
+      </mat-form-field>
+    </div>
+ 
+    <div fxFlex="50"  class="pr-1">
+      <mat-form-field class="full-width">
+        <input
+        matInput
+        name="assignees"
+        [formControl]="itemForm.controls['assignedStaffIdSet']"
+        placeholder="Assignees IDs">
       </mat-form-field>
     </div>
 
@@ -37,40 +83,23 @@
       <mat-form-field class="full-width">
         <input
         matInput
-        name="company"
-        [formControl]="itemForm.controls['company']"
-        placeholder="Company">
+        name="reporters"
+        [formControl]="itemForm.controls['managerIdSet']"
+        placeholder="Reporters IDs">
       </mat-form-field>
     </div>
+    
     <div fxFlex="50"  class="pr-1">
       <mat-form-field class="full-width">
         <input
         matInput
-        name="phone"
-        [formControl]="itemForm.controls['phone']"
-        placeholder="Phone">
+        name="recurringPeriodCronExpression"
+        [formControl]="itemForm.controls['recurringPeriodCronExpression']"
+        placeholder="Recurring Period CronExpression">
       </mat-form-field>
-    </div>
-    <div fxFlex="50"  class="pr-1">
-      <mat-form-field class="full-width">
-        <input
-        matInput
-        name="address"
-        [formControl]="itemForm.controls['address']"
-        placeholder="address">
-      </mat-form-field>
-    </div>
-    <div fxFlex="50"  class="pr-1">
-      <mat-form-field class="full-width">
-        <input
-        matInput
-        name="balance"
-        [formControl]="itemForm.controls['balance']"
-        placeholder="Balance">
-      </mat-form-field>
-    </div>
+    </div> 
     <div fxFlex="50"  class="pt-1 pr-1">
-      <mat-slide-toggle [formControl]="itemForm.controls['isActive']">Active Customer</mat-slide-toggle>
+      <mat-slide-toggle [formControl]="itemForm.controls['isRecurring']">Is Recurring</mat-slide-toggle>
     </div>
 
 

@@ -132,7 +132,7 @@ export class CrudNgxTableComponent implements OnInit, OnDestroy {
                 this.onError(err);
               });
               this.loader.close();
-              this.snack.open('Member deleted!', 'OK', { duration: 4000 })
+              this.snack.open('Task deleted!', 'OK', { duration: 4000 })
             }, err => {
               this.onError(err);
             })
