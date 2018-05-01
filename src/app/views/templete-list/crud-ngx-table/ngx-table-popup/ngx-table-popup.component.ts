@@ -22,8 +22,6 @@ export class NgxTablePopupComponent implements OnInit {
     this.itemForm = this.fb.group({
       name: [item.name || '', Validators.required],
       description: [item.description || ''],
-      taskStatusString: [item.taskStatusString || '', Validators.required],
-      timeEstimatedFinish: [item.timeEstimatedFinish || '', Validators.required],
       assignedStaffIdSet: [item.assignees || '', Validators.required],
       managerIdSet: [item.reporters || '', Validators.required],
       estimatedDuration: [item.estimatedDuration || '', Validators.required],

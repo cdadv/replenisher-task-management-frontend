@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
+
 interface IMenuItem {
   type: string,       // Possible values: link/dropDown/icon/separator/extLink
   name?: string,      // Used as display text for item and title for separator type
@@ -35,6 +36,16 @@ export class NavigationService {
       tooltip: 'task management',
       icon: 'format_list_bulleted',
       state: 'task_management'
+    }
+  ]
+
+  advancedMenu: IMenuItem[] = [
+    {
+      name: 'TASK MANAGEMENT',
+      type: 'link',
+      tooltip: 'task management',
+      icon: 'format_list_bulleted',
+      state: 'task_management'
     },
     {
       name: 'TEMPLATE MANAGEMENT',
@@ -52,6 +63,13 @@ export class NavigationService {
   menuItems = new BehaviorSubject<IMenuItem[]>(this.defaultMenu);
   // navigation component has subscribed to this Observable
   menuItems$ = this.menuItems.asObservable();
+  getDefaultMenu() {
+    return this.defaultMenu;
+  }
+
+  getadvancedMenu() {
+    return this.defaultMenu;
+  }
 
   // Customizer component uses this method to change menu.
   // You can remove this method and customizer component.
@@ -60,4 +78,6 @@ export class NavigationService {
   publishNavigationChange(menuType: string) {
     this.menuItems.next(this.defaultMenu);
   }
+
+
 }

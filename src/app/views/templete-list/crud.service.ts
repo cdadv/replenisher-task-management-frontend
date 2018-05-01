@@ -22,7 +22,6 @@ export class CrudService {
   updateItem(id, item): Observable<any> {
     item.corporationId = 1;
     item.taskTemplateId = id; 
-    console.log(item);
     return this.httpService.put(this.uri, item);
   }
   removeItem(id) {
