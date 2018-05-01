@@ -14,7 +14,7 @@ export class SecuredHttpService {
       'Content-Type':  'application/json',
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'DELETE, HEAD, GET, OPTIONS, POST, PUT',
-      'Access-Control-Allow-Headers': 'Content-Type, Content-Range, Content-Disposition, Content-Description'
+      'Access-Control-Allow-Headers': 'Access-Control-Allow-Origin, Content-Type, Content-Range, Content-Disposition, Content-Description'
     }),
     params: undefined
   };
