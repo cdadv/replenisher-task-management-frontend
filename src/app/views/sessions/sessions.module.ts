@@ -21,6 +21,8 @@ import { SessionsRoutes } from "./sessions.routing";
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ErrorComponent } from './error/error.component';
 
+import { TokenService } from './token.service'
+
 @NgModule({
   imports: [
     CommonModule,
@@ -35,6 +37,7 @@ import { ErrorComponent } from './error/error.component';
     FlexLayoutModule,
     RouterModule.forChild(SessionsRoutes)
   ],
+  providers: [TokenService],
   declarations: [ForgotPasswordComponent, LockscreenComponent, SigninComponent, SignupComponent, NotFoundComponent, ErrorComponent]
 })
 export class SessionsModule { }

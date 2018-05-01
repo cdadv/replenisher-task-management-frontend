@@ -68,8 +68,7 @@ export class CrudNgxTableComponent implements OnInit, OnDestroy {
   }
 
   openPopUp(data: any = {}, isNew?) {
-    console.log(data);
-    let title = isNew ? 'Add new Task' : 'Update Task';
+    let title = isNew ? 'Add new Task Template' : 'Update Task Template';
     let dialogRef: MatDialogRef<any> = this.dialog.open(NgxTablePopupComponent, {
       width: '720px',
       disableClose: true,

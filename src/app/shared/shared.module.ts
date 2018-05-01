@@ -56,9 +56,11 @@ import { ExcerptPipe } from "./pipes/excerpt.pipe";
 import { ThemeService } from './services/theme.service';
 import { LayoutService } from './services/layout.service';
 import { NavigationService } from "./services/navigation.service";
-import { HttpService } from './services/http.service';
+import { SecuredHttpService } from './services/http.service';
+import { UnsecuredHttpService } from './services/httpunsecured.service';
 import { RoutePartsService } from './services/route-parts.service';
 import { AuthGuard } from './services/auth/auth.guard';
+import { TokenService } from '../views/sessions/token.service';
 
 const classesToInclude = [
   
@@ -110,7 +112,9 @@ const classesToInclude = [
     LayoutService,
     NavigationService,
     RoutePartsService,
-    HttpService,
+    SecuredHttpService,
+    UnsecuredHttpService,
+    TokenService,
     AuthGuard
   ],
   declarations: classesToInclude,

@@ -65,7 +65,7 @@
         matInput
         name="assignees"
         [formControl]="itemForm.controls['assignedStaffIdSet']"
-        placeholder="Assignees">
+        placeholder="Assignees IDs">
       </mat-form-field>
     </div>
 
@@ -75,24 +75,9 @@
         matInput
         name="reporters"
         [formControl]="itemForm.controls['managerIdSet']"
-        placeholder="Reporters">
+        placeholder="Reporters IDs">
       </mat-form-field>
     </div>
-    
-    <div fxFlex="50"  class="pr-1">
-      <mat-form-field class="full-width">
-        <input
-        matInput
-        name="recurringPeriodCronExpression"
-        [formControl]="itemForm.controls['recurringPeriodCronExpression']"
-        placeholder="Recurring Period CronExpression">
-      </mat-form-field>
-    </div> 
-    <div fxFlex="50"  class="pt-1 pr-1">
-      <mat-slide-toggle [formControl]="itemForm.controls['isRecurring']">Is Recurring</mat-slide-toggle>
-    </div>
-
-
 
     <div fxFlex="100" class="mt-1">
       <button mat-raised-button color="primary" [disabled]="itemForm.invalid">Save</button>

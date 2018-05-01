@@ -2,18 +2,7 @@
   <div id="scroll-area" class="navigation-hold" fxLayout="column">
     <!-- App Logo -->
     <div class="branding default-bg">
-      <img src="assets/images/logo.png" alt="" class="app-logo">
-      <!-- Two different logos for dark and light themes -->
-      <img 
-      src="assets/images/logo-text-white.png" 
-      alt="" 
-      class="app-logo-text"
-      *ngIf="themeService.activatedTheme?.name?.indexOf('dark') !== -1">
-      <img 
-      src="assets/images/logo-text.png" 
-      alt="" 
-      class="app-logo-text"
-      *ngIf="themeService.activatedTheme?.name?.indexOf('dark') === -1">
+      Walmart Lab Assignment
     </div>
 
     <!-- Sidebar user -->
@@ -23,7 +12,7 @@
       </div>
       <span class="app-user-name mb-05">
         <mat-icon class="icon-xs text-muted">lock</mat-icon> 
-        Watson Joyce<br>(Replenishment Manager)
+        Full Name: {{ fullName }} <br> Role: {{ role }}
       </span>
     </div>
     <!-- Navigation -->

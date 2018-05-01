@@ -39,7 +39,7 @@
           </ngx-datatable-column>
           <ngx-datatable-column name="Recurring" [flexGrow]="1" [sortable]="true" prop='recurring'>
             <ng-template let-row="row" ngx-datatable-cell-template>
-              <mat-chip mat-sm-chip [color]="'primary'" [selected]="row.recurring=='true'">{{row.recurring}}</mat-chip>
+              <mat-chip mat-sm-chip [color]="'primary'" [selected]="row.recurring=='true'">{{row.isRecurring}}</mat-chip>
             </ng-template>
           </ngx-datatable-column>
           <ngx-datatable-column name="Actions" [flexGrow]="1">

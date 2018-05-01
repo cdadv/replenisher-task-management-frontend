@@ -13,7 +13,6 @@ export class SignupComponent implements OnInit {
   @ViewChild(MatButton) submitButton: MatButton;
 
   signupForm: FormGroup
-  constructor() {}
 
   ngOnInit() {
     const password = new FormControl('', Validators.required);
@@ -35,7 +34,6 @@ export class SignupComponent implements OnInit {
 
   signup() {
     const signupData = this.signupForm.value;
-    console.log(signupData);
 
     this.submitButton.disabled = true;
     this.progressBar.mode = 'indeterminate';
