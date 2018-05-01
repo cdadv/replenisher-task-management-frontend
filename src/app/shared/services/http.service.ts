@@ -8,12 +8,12 @@ import { TokenService } from '../../views/sessions/token.service'
 
 @Injectable()
 export class SecuredHttpService {
-  private basic_url = 'http://ec2-54-213-41-232.us-west-2.compute.amazonaws.com:8181'
+  private basic_url = 'http://127.0.0.1:8181'
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
       'Accept': 'application/json',
-      'Access-Control-Allow-Origin': 'http://ec2-54-213-41-232.us-west-2.compute.amazonaws.com:4200',
+      'Access-Control-Allow-Origin': 'http://127.0.0.1:4200',
       'Access-Control-Allow-Credentials': 'true'
     }),
     params: undefined
