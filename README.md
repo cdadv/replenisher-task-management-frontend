@@ -15,16 +15,17 @@ Before running the tests make sure you are serving the app via `ng serve`.
 I pre-setup some demo account for logging in and play around in http://54.213.41.232:4200/:     
 
 - Admin account: 
-	- id:1 - admin_user:admin_password     
+	- id: 1, username: admin_user, password: admin_password     
 
 - Manager account: 
-	- id:5 - manager_user_1:manager_password_1 
-	- id:6 - manager_user_2:manager_password_2    
+	- id: 5, username: manager_user_1, password: manager_password_1 
+	- id: 6, username: manager_user_2, password: manager_password_2    
 
 - User account: 
-	- id:2 - staff_user_1:staff_password_1
-	- id:3 - staff_user_2:staff_password_2 
-	- id:4 - staff_user_3:staff_password_3    
+	- id: 2, username: staff_user_1, password: staff_password_1
+	- id: 3, username: staff_user_2, password: staff_password_2 
+	- id: 4, username: staff_user_3, password: staff_password_3       
+(id will be used in task and task tempate creation dialog. If you want to assign a task to staff, please use id for staffIdSet and managerIdSet.)
 
 ## Tech stack I used:
 - For Backend:
