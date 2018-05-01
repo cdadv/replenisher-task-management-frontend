@@ -8,7 +8,7 @@ import { TokenService } from '../../views/sessions/token.service'
 
 @Injectable()
 export class UnsecuredHttpService {
-  private basic_url = 'http://localhost:8181'
+  private basic_url = 'http://ec2-54-213-41-232.us-west-2.compute.amazonaws.com:8181'
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json'
