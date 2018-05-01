@@ -12,7 +12,9 @@ export class SecuredHttpService {
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
-      'Access-Control-Allow-Origin': '*'
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'DELETE, HEAD, GET, OPTIONS, POST, PUT',
+      'Access-Control-Allow-Headers': 'Content-Type, Content-Range, Content-Disposition, Content-Description'
     }),
     params: undefined
   };
