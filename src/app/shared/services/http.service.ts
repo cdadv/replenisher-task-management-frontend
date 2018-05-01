@@ -8,10 +8,11 @@ import { TokenService } from '../../views/sessions/token.service'
 
 @Injectable()
 export class SecuredHttpService {
-  private basic_url = 'http://127.0.0.1:8181'
+  private basic_url = 'http://54.213.41.232:8181'
   private httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type':  'application/json'
+      'Content-Type':  'application/json',
+      'Access-Control-Allow-Origin': '*'
     }),
     params: undefined
   };
