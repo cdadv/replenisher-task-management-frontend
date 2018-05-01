@@ -11,7 +11,10 @@ export class SecuredHttpService {
   private basic_url = 'http://127.0.0.1:8181'
   private httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type':  'application/json'
+      'Content-Type':  'application/json',
+      'Accept': 'application/json',
+      'Access-Control-Allow-Origin': 'http://localhost:4200',
+      'Access-Control-Allow-Credentials': 'true'
     }),
     params: undefined
   };
